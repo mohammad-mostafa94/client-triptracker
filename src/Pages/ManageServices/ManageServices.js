@@ -39,10 +39,16 @@ const ManageServices = () => {
                             className ="m-5"
                             key={service._id}>
                             <h4>{service.name}</h4>
-                            <button className="btn btn-danger" onClick={()=>handleDeleteService(service._id)}>Delete</button>
+                            
+                            <br />
+                            <br />
+                            <Link  to ="/addService"><button className="btn btn-success">Add service</button></Link>
                             <br />
                             <br />
                             <Link  to ={`/update/${service._id}`}><button className="btn btn-primary">Update service</button></Link>
+                            <br />
+                            <br />
+                            <button className="btn btn-danger" onClick={()=>handleDeleteService(service._id)}>Delete</button>
                     
                         </div>)
             }

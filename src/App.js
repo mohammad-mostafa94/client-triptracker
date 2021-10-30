@@ -6,10 +6,10 @@ import AddService from "./Pages/AddService/AddService";
 import Footer from "./Pages/Footer/Footer";
 import Header from "./Pages/HomePage/Header/Header";
 import HomePage from "./Pages/HomePage/HomePage";
+import PrivateRoute from "./Pages/HomePage/PrivateRoute/PrivateRoute";
 import ServiceDetails from "./Pages/HomePage/Services/ServiceDetails/ServiceDetails";
 import Login from "./Pages/Login/Login";
 import ManageServices from "./Pages/ManageServices/ManageServices";
-import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
 import UpdateService from "./Pages/UpdateService/UpdateService";
 
 function App() {
