@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { useHistory, useParams } from 'react-router';
 
@@ -45,6 +46,7 @@ const UpdateService = () => {
     
     return (
         <div>
+        <Helmet> <title> Update Service </title></Helmet>
             <h1>Update service ID:{updateService._id}</h1>
             <h1>Update service name: {updateService.name}</h1>
             <form onSubmit={handleSubmit(onSubmit)}>

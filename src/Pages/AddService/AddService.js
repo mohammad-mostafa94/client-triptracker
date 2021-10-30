@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react';
+import { Helmet } from "react-helmet";
 import { useForm } from "react-hook-form";
 import { useHistory } from 'react-router';
 import './AddService.css';
@@ -23,6 +24,7 @@ const AddService = () => {
     };
     return (
         <div className="addServiceStyle">
+            <Helmet> <title> Service Add</title></Helmet>
             <h1 className ="text-center">Add new service</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name")}  placeholder="name"/>

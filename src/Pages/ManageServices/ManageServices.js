@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Helmet } from "react-helmet";
 import { Link } from 'react-router-dom';
-
 const ManageServices = () => {
 
     const [services, setServices] = useState([]);
@@ -31,6 +31,7 @@ const ManageServices = () => {
     }
     return (
         <div className="text-center ">
+            <Helmet> <title> Service Manage </title></Helmet>
             <h1>Manage Service</h1>
             <h2>Total service: {services.length}</h2>
             {

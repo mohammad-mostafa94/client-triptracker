@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Card, Container } from 'react-bootstrap';
+import { Helmet } from "react-helmet";
 import { useParams } from 'react-router';
-
 const ServiceDetails = () => {
     const {serviceId} = useParams();
     const [singleService , setSingleService] = useState([]);
@@ -14,7 +14,7 @@ const ServiceDetails = () => {
         .then(data => setSingleService(data) )
     },[])
     return (
-        <>
+        <><Helmet> <title> Service Details </title></Helmet>
             <Container>
                 <Card className="bg-dark text-white">
                 <Card.Img src={img} alt={name} />

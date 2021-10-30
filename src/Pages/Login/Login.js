@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import { Helmet } from "react-helmet";
 import { useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
 import "./Login.css";
@@ -35,6 +36,7 @@ export default function Login() {
 
     return (
         <div className="Login">
+        <Helmet> <title> Login Form </title></Helmet>
         <Form onSubmit={handleSubmit}>
             <Form.Group size="lg" controlId="email">
             <Form.Label>Email</Form.Label>
