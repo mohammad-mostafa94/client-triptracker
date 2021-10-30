@@ -1,10 +1,14 @@
 import axios from 'axios';
 import React from 'react';
 import { useForm } from "react-hook-form";
+import { useHistory } from 'react-router';
 import './AddService.css';
 const AddService = () => {
 
     const { register, handleSubmit ,reset} = useForm();
+
+    const history = useHistory();
+
     const onSubmit = data => {
         axios.post("https://polar-springs-55831.herokuapp.com/service",data)
         .then(res=>{
@@ -13,6 +17,7 @@ const AddService = () => {
             if (res.data.insertedId) {
                 alert("data added successfully");
                 reset();
+                history.push("/")
             }
         })
     };
