@@ -35,7 +35,7 @@ const UpdateService = () => {
     const onSubmit = () => {
         axios.put(`https://polar-springs-55831.herokuapp.com/update/${updateId}`, updateService)
         .then(res=>{
-            console.log(res.data);
+            
             if (res.data.modifiedCount > 0) {
                 alert("data updated successfully");
                 setUpdateService({});
@@ -45,15 +45,16 @@ const UpdateService = () => {
         };
     
     return (
-        <div>
+        <div className="text-center">
         <Helmet> <title> Update Service </title></Helmet>
             <h1>Update service ID:{updateService._id}</h1>
             <h1>Update service name: {updateService.name}</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name")} onChange={handleChangeName} value={updateService.name || ''} 
                 placeholder="name"/>
-
+                <br />
                 <input type="number" {...register("price")} onChange={handleChangePrice} value={updateService.price || ''} />
+                <br />
                 <input type="submit" value="update" />
             </form>
         </div>

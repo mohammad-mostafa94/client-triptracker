@@ -18,7 +18,6 @@ const ManageServices = () => {
             const url = `https://polar-springs-55831.herokuapp.com/service/${id}`
                     axios.delete(url)
                     .then(res=>{
-                        console.log(res.data);
                         if (res.data.deletedCount) {
                             alert("delete a service");
                             const remainingService = services.filter(service=> service._id !== id);

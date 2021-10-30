@@ -39,14 +39,14 @@ const Footer = () => {
                 
                 <div className="col-4 my-5">
                     <h5>Connect With Us</h5>
-                        <p><i class="fas fa-map-marked-alt"></i> Jigatula,Dhanmondi,Dhaka-1091,Bangladesh.</p>
-                        <p><i class="fas fa-envelope-open-text"></i> mohammadmostafa1094@gmail.com</p>
-                        <p> <i class="fas fa-phone-square-alt"></i> +018208094308</p>
+                        <p><i className="fas fa-map-marked-alt"></i> Jigatula,Dhanmondi,Dhaka-1091,Bangladesh.</p>
+                        <p><i className="fas fa-envelope-open-text"></i> mohammadmostafa1094@gmail.com</p>
+                        <p> <i className="fas fa-phone-square-alt"></i> +018208094308</p>
                     <div><h4>Connect Us</h4></div>
                     <div>
-                        <i class="fab fa-facebook-f"></i>
-                        <i class="fab fa-twitter mx-3"></i> 
-                        <i class="fab fa-linkedin-in"></i>
+                        <i className="fab fa-facebook-f"></i>
+                        <i className="fab fa-twitter mx-3"></i> 
+                        <i className="fab fa-linkedin-in"></i>
                     </div>
                 </div>
             </div>

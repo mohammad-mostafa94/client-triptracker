@@ -5,7 +5,6 @@ import useAuth from '../../../hooks/useAuth';
 
 const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading , } = useAuth();
-    console.log("user email from pRoute:",user,isLoading)
     if (isLoading) {
         return <Loader
         type="PacmanLoader"

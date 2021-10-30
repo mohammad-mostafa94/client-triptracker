@@ -8,3 +8,7 @@ body {
 code {
   font-family: 'Encode Sans', sans-serif;
 }
+
+.rounded-lg {
+  border-radius: 20px;
+}

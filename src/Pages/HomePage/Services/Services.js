@@ -16,9 +16,13 @@ const Services = () => {
         })
     },[])
     return (
-        <div className="text-center">
+        <div className="container">
+            <div className="text-center">
+                <h1>Our services</h1>
+                <p>Explain the various services at the moment.</p>
+            </div>
             <Container>
-                <Row>
+                <Row className ="g-4">
                     <>
                         {
                             (services.length === 0) ? (

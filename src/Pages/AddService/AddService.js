@@ -13,8 +13,6 @@ const AddService = () => {
     const onSubmit = data => {
         axios.post("https://polar-springs-55831.herokuapp.com/service",data)
         .then(res=>{
-            console.log(res.data);
-            console.log(res.data.insertedId);
             if (res.data.insertedId) {
                 alert("data added successfully");
                 reset();
