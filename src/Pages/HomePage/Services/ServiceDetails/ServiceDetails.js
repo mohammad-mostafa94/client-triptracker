@@ -6,24 +6,25 @@ const ServiceDetails = () => {
     const {serviceId} = useParams();
     const [singleService , setSingleService] = useState([]);
 
-    const {name, img ,description} = singleService;
+    const {name, img ,description,price} = singleService;
     
     useEffect(()=>{
-        fetch(`http://localhost:5000/service/${serviceId}`)
+        fetch(`https://polar-springs-55831.herokuapp.com/service/${serviceId}`)
         .then(res=> res.json())
         .then(data => setSingleService(data) )
     },[])
     return (
         <>
             <Container>
-            <Card className="bg-dark text-white">
-            <Card.Img src={img} alt={name} />
-            <Card.ImgOverlay>
-                <Card.Title>{name}</Card.Title>
-                <Card.Text>
-                    {description}
-                </Card.Text>
-            </Card.ImgOverlay>
+                <Card className="bg-dark text-white">
+                <Card.Img src={img} alt={name} />
+                <Card.ImgOverlay>
+                    <Card.Title>{name}</Card.Title>
+                    <Card.Title>Price : ${price}</Card.Title>
+                    <Card.Text>
+                        {description}
+                    </Card.Text>
+                </Card.ImgOverlay>
             </Card>
             </Container>
         </>

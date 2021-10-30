@@ -5,14 +5,14 @@ import Service from './Service';
 
 const Services = () => {
     const [services , setServices] = useState([]);
-    const [isLoading, setIsLoading] = useState(true);
+    // const [isLoading, setIsLoading] = useState(true);
 
     useEffect(()=>{
-        fetch("http://localhost:5000/services")
+        fetch("https://polar-springs-55831.herokuapp.com/services")
         .then(res => res.json())
         .then(data => {
             setServices(data)
-            setIsLoading(false);
+            // setIsLoading(false);
         })
     },[])
     return (
