@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const ManageServices = () => {
 
-    const [services, setServices] = useState([])
+    const [services, setServices] = useState([]);
+
     useEffect(()=>{
         fetch("https://polar-springs-55831.herokuapp.com/services")
         .then(res=>res.json())
@@ -22,23 +23,27 @@ const ManageServices = () => {
                             alert("delete a service");
                             const remainingService = services.filter(service=> service._id !== id);
                             setServices(remainingService);
+
                         }
                     })
         }
         
     }
     return (
-        <div>
+        <div className="text-center ">
             <h1>Manage Service</h1>
+            <h2>Total service: {services.length}</h2>
             {
-                services.map(service=> <div key={service._id}>
-                    <h4>{service.name}</h4>
-                    <button className="btn btn-danger" onClick={()=>handleDeleteService(service._id)}>Delete</button>
-                    <br />
-                    <br />
-                    <Link className="btn btn-primary" to ={`/update/${service._id}`}><button >Update service</button></Link>
+                services.map(service=> <div 
+                            className ="m-5"
+                            key={service._id}>
+                            <h4>{service.name}</h4>
+                            <button className="btn btn-danger" onClick={()=>handleDeleteService(service._id)}>Delete</button>
+                            <br />
+                            <br />
+                            <Link  to ={`/update/${service._id}`}><button className="btn btn-primary">Update service</button></Link>
                     
-                </div>)
+                        </div>)
             }
         </div>
     );

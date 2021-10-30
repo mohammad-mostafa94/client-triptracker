@@ -8,7 +8,9 @@ import Header from "./Pages/HomePage/Header/Header";
 import HomePage from "./Pages/HomePage/HomePage";
 import ServiceDetails from "./Pages/HomePage/Services/ServiceDetails/ServiceDetails";
 import Login from "./Pages/Login/Login";
+import ManageServices from "./Pages/ManageServices/ManageServices";
 import PrivateRoute from "./Pages/PrivateRoute/PrivateRoute";
+import UpdateService from "./Pages/UpdateService/UpdateService";
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
           <Route exact path ="/" component = {HomePage}/>
           <Route exact path ="/login" component = {Login}/>
           <Route exact path ="/addService" component = {AddService}/>
+          <Route path="/manageService" exact component = {ManageServices}/>
+          <Route path="/update/:updateId" exact component = {UpdateService}/>
           <PrivateRoute path="/service/:serviceId">
             <ServiceDetails></ServiceDetails>
           </PrivateRoute>

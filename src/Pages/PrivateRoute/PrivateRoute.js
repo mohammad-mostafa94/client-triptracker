@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from 'react-bootstrap';
+import Loader from "react-loader-spinner";
 import { Redirect, Route } from 'react-router';
 import useAuth from './../../hooks/useAuth';
 
@@ -7,7 +7,13 @@ const PrivateRoute = ({ children, ...rest }) => {
     const { user, isLoading , } = useAuth();
     console.log("user email from pRoute:",user,isLoading)
     if (isLoading) {
-        return <Spinner animation="border" variant="success" />
+        return <Loader
+        type="PacmanLoader"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={3000} //3 secs
+    />
     }
     return (
         <Route
