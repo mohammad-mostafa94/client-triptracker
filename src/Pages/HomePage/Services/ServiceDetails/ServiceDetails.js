@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from "react-helmet";
 import { useParams } from 'react-router';
+import BookingForm from '../../../BookingForm/BookingForm';
 const ServiceDetails = () => {
+
     const {serviceId} = useParams();
     const [singleService , setSingleService] = useState([]);
 
@@ -12,6 +14,8 @@ const ServiceDetails = () => {
         .then(res=> res.json())
         .then(data => setSingleService(data))
     },[])
+
+    
     return (
         <><Helmet><title>Details of service</title></Helmet>
             <div className="container py-5">
@@ -24,6 +28,9 @@ const ServiceDetails = () => {
                 <h5><span className="text-secondary">Rating: </span> <span className="ps-2"><i className="fas text-warning fa-star"></i></span> <span className="text-warning">{review}</span></h5>
                 <h5 className="text-secondary">Capacity: <span className="text-dark">Max {Person} Person</span></h5>
                 <h4 className="text-dark">Price: <span className="text-info">${price}</span></h4>
+            </div>
+            <div className="container">
+                <BookingForm></BookingForm>
             </div>
         </>
     );

@@ -32,6 +32,7 @@ const UpdateService = () => {
     }
 
     const history = useHistory();
+    
     const onSubmit = () => {
         axios.put(`https://polar-springs-55831.herokuapp.com/update/${updateId}`, updateService)
         .then(res=>{
@@ -49,6 +50,7 @@ const UpdateService = () => {
         <Helmet> <title> Update Service </title></Helmet>
             <h1>Update service ID:{updateService._id}</h1>
             <h1>Update service name: {updateService.name}</h1>
+
             <form onSubmit={handleSubmit(onSubmit)}>
                 <input {...register("name")} onChange={handleChangeName} value={updateService.name || ''} 
                 placeholder="name"/>

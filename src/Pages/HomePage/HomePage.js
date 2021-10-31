@@ -1,12 +1,16 @@
 import React from 'react';
-import Offering from './Offering/Offering';
+import Banner from './Banner/Banner';
+import Contact from './Contact/Contact';
 import Services from './Services/Services';
+import Testi from './Testi/Testi';
 
 const HomePage = () => {
     return (
         <>
+            <Banner></Banner>
             <Services></Services>
-            <Offering></Offering>
+            <Testi></Testi>
+            <Contact></Contact>
         </>
     );
 };

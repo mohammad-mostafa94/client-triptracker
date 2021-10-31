@@ -26,7 +26,7 @@ const Footer = () => {
                     
                 </div>
 
-                <div className="col-lg-3 col-5  my-5">
+                <div className="col-lg-3 col-12  my-5">
                     <h5>Quick Links</h5>
                     <div>
                         <Link className="text-decoration-none text-secondary d-block"><i className="fas fa-caret-square-right me-2"></i> About</Link>                        <Link className="text-decoration-none text-secondary d-block"><i className="fas fa-caret-square-right me-2"></i> Career</Link>
@@ -37,7 +37,7 @@ const Footer = () => {
                     </div>
                 </div>
                 
-                <div className="col-4 my-5">
+                <div className="col-12 col-lg-4 my-5">
                     <h5>Connect With Us</h5>
                         <p><i className="fas fa-map-marked-alt"></i> Jigatula,Dhanmondi,Dhaka-1091,Bangladesh.</p>
                         <p><i className="fas fa-envelope-open-text"></i> mohammadmostafa1094@gmail.com</p>

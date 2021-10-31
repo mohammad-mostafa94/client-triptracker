@@ -6,7 +6,7 @@ import initializeAuthentication from "../Pages/Firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
-    const [user, setUser] = useState({});
+    const [user, setUser] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const auth = getAuth();
@@ -16,10 +16,7 @@ const useFirebase = () => {
         const googleProvider = new GoogleAuthProvider();
 
         return signInWithPopup(auth, googleProvider)
-            // .then(result => {
-            //     setUser(result.user);
-            // })
-            // .finally(() => setIsLoading(false));
+            .finally(() => setIsLoading(false));
     }
 
     // observe user state change

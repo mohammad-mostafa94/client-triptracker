@@ -5,6 +5,7 @@ import Service from './Service';
 
 const Services = () => {
     const [services , setServices] = useState([]);
+
     // const [isLoading, setIsLoading] = useState(true);
 
     useEffect(()=>{
@@ -12,6 +13,7 @@ const Services = () => {
         .then(res => res.json())
         .then(data => {
             setServices(data)
+            console.log(data)
             // setIsLoading(false);
         })
     },[])

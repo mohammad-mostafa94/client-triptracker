@@ -1,26 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
 import { Helmet } from "react-helmet";
-import { useHistory, useLocation } from "react-router-dom";
+import { Link, useHistory, useLocation } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import logo from '../../image/logo.png';
 import "./Login.css";
 
 export default function Login() {
 
     const { signInUsingGoogle } = useAuth();
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    
 
-    const validateForm = () => {
-        return email.length > 0 && password.length > 0;
-    }
-
-    
-    const  handleSubmit = (event)  => {
-        event.preventDefault();
-    }
 
     // handle redirect URL 
     const location = useLocation();
@@ -35,36 +24,22 @@ export default function Login() {
     }
 
     return (
-        <div className="Login">
+        <div className="text-center">
         <Helmet> <title> Login Form </title></Helmet>
-        <Form onSubmit={handleSubmit}>
-            <Form.Group size="lg" controlId="email">
-            <Form.Label>Email</Form.Label>
-            <Form.Control
-                autoFocus
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-            />
-            </Form.Group>
-            <Form.Group size="lg" controlId="password">
-            <Form.Label>Password</Form.Label>
-            <Form.Control
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-            />
-            </Form.Group>
-            <Button block size="lg" type="submit" disabled={!validateForm()}>
-                Login
-            </Button>
+        <div>
+            <h2>Welcome to </h2>
+            <Link className="navbar-brand d-block  pt-5 pb-2" to="/">
+                        <img className="me-2" width="200" src={logo} alt="logo" />
+                        <p className="fs-1 text-info">triptracker</p>
+                    </Link>
+        </div>
+
             <br />
-            <br />
-            <Button onClick={handleGoogleSignIn} block size="lg" >
-                Google SignIn
+            <Button className="btn btn-info text-white mb-5" onClick={handleGoogleSignIn} block size="lg" >
+            <i class="fab fa-google-plus-g"></i> Google SignIn
             </Button>
 
-        </Form>
+        
         </div>
     );
 }
