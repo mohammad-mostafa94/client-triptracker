@@ -17,24 +17,25 @@ import UpdateService from "./Pages/UpdateService/UpdateService";
 function App() {
   return (
     <AuthProvider>
-         <Router>
-          <Header/>
-          <Switch>
-            <Route exact path ="/" component = {HomePage}/>
-            <Route exact path ="/login" component = {Login}/>
-            <Route exact path ="/cart" component = {Cart}/>
-            <Route exact path ="/addService" component = {AddService}/>
-            <Route path="/manageService" exact component = {ManageServices}/>
-            <Route path="/update/:updateId" exact component = {UpdateService}/>
-            <PrivateRoute path="/service/:serviceId">
-              <ServiceDetails></ServiceDetails>
-            </PrivateRoute>
-            <Route  path="*" component={NotFound}/>
-          </Switch>
-          <Footer/>
-        </Router>
+      // react router v5
+      <Router>
+        <Header />
+        <Switch>
+          <Route exact path="/" component={HomePage} />
+          <Route exact path="/login" component={Login} />
+          <Route exact path="/cart" component={Cart} />
+          <Route exact path="/addService" component={AddService} />
+          <Route path="/manageService" exact component={ManageServices} />
+          <Route path="/update/:updateId" exact component={UpdateService} />
+          <PrivateRoute path="/service/:serviceId">
+            <ServiceDetails></ServiceDetails>
+          </PrivateRoute>
+          <Route path="*" component={NotFound} />
+        </Switch>
+        <Footer />
+      </Router>
     </AuthProvider>
-   
+
   );
 }
 
